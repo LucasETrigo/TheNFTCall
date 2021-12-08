@@ -1,0 +1,825 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #010001;
+}
+
+
+
+/* CONTENEDOR DE TODO, PADRE DE GRIDS */
+.grilla {
+    display: grid;
+    height: 1066px;
+}
+
+.grilla ul a:hover {
+    color: #8d29c1;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav li a {
+    color: white;
+    font-size: 16px;
+}
+
+.logo a {
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
+.textoRosa{
+    color: #e53ba1;
+}
+
+.textoBlanco {
+    color: white;
+    text-align: center;
+}
+
+.textoPrimario {
+    background-image: linear-gradient(90deg,#8d29c1,#f03f77 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+/* PAGINA PARA DISPOSITIVOS MOVILES DE HASTA 600PX */
+@media only screen and (max-width:600px) {
+
+    .grilla {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10% 10% 70% 10%;
+        grid-template-areas: "heaI heaI"
+            "navI navI"
+            "mainI mainI"
+            "footI footI";
+    }
+
+    /* HEADER CELUS */
+    header {
+        grid-area: heaI;
+        align-items: center;
+    }
+
+    .logo {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* NAV CELUS */
+    nav {
+        grid-area: navI;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+
+
+    /* EMPIEZA EL INDEX */
+    .mainIndex {
+        grid-area: mainI;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "titulosM titulosM"
+            "imagenesM imgtitM";
+        align-items: center;
+    }
+
+    .titulosM {
+        grid-area: titulosM;
+        align-items: center;
+        position: relative;
+        bottom: 30px;
+    }
+    .titulosM h2{
+        font-size: 35px;
+        letter-spacing: 3px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .boton {
+        width: 180px;
+        line-height: 210%;
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        border-radius: 104px;
+        font-size: 1em;
+        font-weight: 600;
+        position: relative;
+        top: 30px;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#f03f78), to(#d02f67));
+        background-image: linear-gradient(180deg, #f03f78, #d02f67);
+        box-shadow: 0 8px 40px -5px rgba(170, 31, 57, .92);
+        -webkit-transition: opacity .2s, box-shadow .2s, -webkit-filter .2s;
+        transition: opacity .2s, filter .2s, box-shadow .2s, -webkit-filter .2s;
+    }
+
+    .imagenesM {
+        height: 100%;
+        grid-area: imagenesM;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .imgtitM{
+        height: 100%;
+        grid-area: imgtitM;
+        position: relative;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40% 60%;
+        grid-template-areas:"elh3vid"
+                            "elpvid";
+    }
+    .imgtitM h3{
+        align-self: flex-end;
+        grid-area: elh3vid;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+        position: relative;
+        right: 27px;
+    }
+    .imgtitM p{
+        align-self: flex-start;
+        grid-area: elpvid;
+        font-size: 15px;
+        position: relative;
+        top: 20px;
+        right: 27px;
+    }
+    
+
+
+
+    /* FOOTER CELUS INDEX */
+    footer {
+        grid-area: footI;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerI {
+        align-items: center;
+        width: 100%;
+        position: relative;
+        top: 27px;
+    }
+
+    .footerI ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* TERMINA EL INDEX */
+
+
+
+
+    /* EMPIEZA EL WHAT IS IT PAGE*/
+    .mainWhatIsIt {
+        grid-area: mainI;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        grid-template-areas: "tituloWIS"
+            "videoWIS";
+        align-items: center;
+    }
+
+    .wisTitle {
+        grid-area: tituloWIS;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wisVideo {
+        grid-area: videoWIS;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wisVideo iframe {
+        width: 90%;
+        height: 80%;
+    }
+
+    /* TERMINA EL WHAT IS IT */
+
+
+
+    /* EMPIEZA EL DISCOVER PAGE */
+    .discoverMain {
+        grid-area: mainI;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "tablaD";
+        align-items: center;
+    }
+
+    .tablasDiscover {
+        grid-area: tablaD;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    /* TERMINA EL DISCOVER PAGE */
+
+
+
+    /* EMPIEZA EL SERVICE PAGE */
+    .servicesMain {
+        grid-area: mainI;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "serTitulos"
+            "serPlanes"
+    }
+
+    .serTitulos {
+        grid-area: serTitulos;
+        position: relative;
+        top: 70px;
+    }
+
+    .serPlanes {
+        grid-area: serPlanes;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* TERMINA EL SERVICE PAGE */
+
+
+
+    /* EMPIEZA EL CONTACT PAGE */
+    .contactUsMain {
+        grid-area: mainI;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "formulario";
+    }
+    .contactNameEmail{
+        grid-area: formulario;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* TERMINA EL CONTACT US PAGE */
+
+
+
+
+    /* EMPIEZA EL ABOUT US PAGE */
+    .aboutUsMain {
+        grid-area: mainI;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUsMain div{
+        position: relative;
+        bottom: 130px;
+    }
+
+
+
+    /* PRIVACY POLICY PAGE CELUS */
+    .privacyMain{
+        grid-area: mainI;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .privacyMain div{
+        position: relative;
+        bottom: 130px;
+    }
+}
+
+
+/* TERMINA EL CODIGO PARA DISPOSITIVOS EXTRA PEQUENOS */
+
+
+
+
+
+
+
+/* EMPIEZA EL CODIGO PARA DISPOSITIVOS CELULARES */
+@media only screen and (min-width:600px){
+    .grilla{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10% 10% 70% 10%;
+        grid-template-areas:"heaCelu heaCelu"
+                            "navCelu navCelu"
+                            "mainCelu mainCelu"
+                            "footerCelu footerCelu";
+    }
+
+    /* HEADER CELUS */
+    header{
+        grid-area: heaCelu;
+        align-items: center;
+    }
+    .logo{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* NAV CELUS */
+    nav{
+        grid-area: navCelu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+    }
+    nav ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    /* MAIN CELUS */
+    .mainIndex{
+        grid-area: mainCelu;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "titulosCelu titulosCelu"
+            "imagenesCelu imgtitCelu";
+        align-items: center;
+    }
+    .titulosM{
+        grid-area: titulosCelu;
+        align-items: center;
+        position: relative;
+    }
+    .titulosM h2{
+        font-size: 45px;
+        letter-spacing: 3px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .titulosM p{
+        font-size: 17px;
+    }
+    .boton {
+        width: 210px;
+        line-height: 270%;
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        border-radius: 104px;
+        font-size: 1em;
+        font-weight: 600;
+        position: relative;
+        top: 30px;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#f03f78), to(#d02f67));
+        background-image: linear-gradient(180deg, #f03f78, #d02f67);
+        box-shadow: 0 8px 40px -5px rgba(170, 31, 57, .92);
+        -webkit-transition: opacity .2s, box-shadow .2s, -webkit-filter .2s;
+        transition: opacity .2s, filter .2s, box-shadow .2s, -webkit-filter .2s;
+    }
+
+    .imagenesM{
+        grid-area: imagenesCelu;
+        height: 100%;
+    }
+    .imagenesM video{
+        width: 100%;
+        height: 100%;
+    }
+
+    .imgtitM{
+        grid-area: imgtitCelu;
+    }
+    
+
+
+    /* FOOTER CELUS*/
+    footer{
+        grid-area: footerCelu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footerI {
+        align-items: center;
+        width: 100%;
+        position: relative;
+        top: 27px;
+    }
+
+    .footerI ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /*TERMINA EL INDEX*/
+
+
+
+
+
+    /* EMPIEZA EL WHAT IS IT */
+
+    /* WIS MAIN PAGE */
+    .mainWhatIsIt{
+        grid-area: mainCelu;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        grid-template-areas:"tituloWIScelu"
+                            "videoWIScelu";
+        align-items: center;
+    }
+    .wisTitle{
+        grid-area: tituloWIScelu;
+        display: flex;
+        justify-content: center;
+    }
+    .wisVideo{
+        grid-area: videoWIScelu;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wisVideo iframe{
+        width: 90%;
+        height: 90%;
+    }
+
+
+
+
+    /* DISCOVER MAIN PAGE */
+
+    .discoverMain{
+        grid-area: mainCelu;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "tablaDCelu";
+        align-items: center;
+    }
+    .tablasDiscover{
+        grid-area: tablaDCelu;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+    }
+    .tablasDiscover table{
+        height: 90%;
+        width: 85%;
+    }
+
+
+
+    /* SERVICES MAIN PAGE */
+
+    .servicesMain{
+        grid-area: mainCelu;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "serTitulosCelu"
+            "serPlanesCelu"
+    }
+    .serTitulos{
+        grid-area: serTitulosCelu;
+        align-items: center;
+        position: relative;
+        top: 70px;
+    }
+    .serPlanes{
+        grid-area: serPlanesCelu;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+
+    /* CONTACT US MAIN PAGE */
+
+    .contactUsMain{
+        grid-area: mainCelu;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "formularioCelu";
+    }
+    .contactNameEmail{
+        grid-area: formularioCelu;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* ABOUT US PAGE CELUS */
+    .aboutUsMain {
+        grid-area: mainCelu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUsMain div{
+        position: relative;
+        bottom: 130px;
+    }
+
+    /* PRIVACY POLICY PAGE CELUS */
+    .privacyMain{
+        grid-area: mainCelu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .privacyMain div{
+        position: relative;
+        bottom: 130px;
+    }
+}
+/* ------------------------ TERMINA CELULARES ------------------------------------- */
+
+
+
+
+
+/* ----------- PARA ESCRITORIOS -----------------------------------------------------------------------------------*/
+@media only screen and (min-width:992px){
+    .grilla{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10% 80% 10%;
+        grid-template-areas:"heaEscritorio navEscritorio"
+                            "mainEscritorio mainEscritorio"
+                            "footerEscritorio footerEscritorio";
+    }
+
+
+    header{
+        grid-area: heaEscritorio;
+        align-items: center;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        right: 165px;
+        bottom: 10px;
+    }
+
+    nav{
+        grid-area: navEscritorio;
+    }
+    nav ul li a{
+        font-size: 18px;
+    }
+
+
+    /* PAGINA INDEX ESCRITORIO */
+    .mainIndex{
+        grid-area: mainEscritorio;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas:"tituloMainEscritorio tituloMainEscritorio"
+                            "imagenesMEscritorio imgtitMEscritorio";
+    }
+    .titulosM{
+        grid-area: tituloMainEscritorio;
+    }
+    .imagenesM{
+        grid-area: imagenesMEscritorio;
+    }
+    .imgtitM{
+        grid-area: imgtitMEscritorio;
+    }
+
+    footer{
+        grid-area: footerEscritorio;
+    }
+    .footerI{
+        position: relative;
+        top: 20px;
+    }
+    footer ul li a{
+        font-size: 18px;
+    }
+
+    /* PAGINA INDEX ESCRITORIO */
+
+    
+
+    /* PAGINA WHAT IS IT ESCRITORIO */
+    .mainWhatIsIt{
+        grid-area: mainEscritorio;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        grid-template-areas:"tituloWISescritorio"
+                            "videoWISescritorio";
+        align-items: center;
+    }
+    .wisTitle{
+        grid-area: tituloWISescritorio;
+        display: flex;
+        justify-content: center;
+    }
+    .wisTitle h2{
+        font-size: 80px;
+        position: relative;
+        top: 50px;
+    }
+    .wisVideo{
+        grid-area: videoWISescritorio;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wisVideo iframe{
+        position: relative;
+        top: 45px;
+        width: 70%;
+        height: 85%;
+    }
+
+
+
+    /* DISCOVER MAIN PAGE ESCRITORIO */
+
+    .discoverMain{
+        grid-area: mainEscritorio;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "tablaDescritorio";
+        align-items: center;
+    }
+    .tablasDiscover{
+        grid-area: tablaDescritorio;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+    }
+    .tablasDiscover table{
+        height: 95%;
+        width: 90%;
+    }
+
+
+
+    /* SERVICES MAIN PAGE ESCRITORIO */
+
+    .servicesMain{
+        grid-area: mainEscritorio;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "serTitulosEscritorio"
+            "serPlanesEscritorio"
+    }
+    .serTitulos{
+        grid-area: serTitulosEscritorio;
+        align-items: center;
+        position: relative;
+        top: 70px;
+    }
+    .serPlanes{
+        grid-area: serPlanesEscritorio;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+
+    /* CONTACT US MAIN PAGE ESCRITORIO */
+
+    .contactUsMain{
+        grid-area: mainEscritorio;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "formularioEscritorio";
+        align-items: center;
+    }
+    .contactNameEmail{
+        grid-area: formularioEscritorio;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* ABOUT US PAGE CELUS ESCRITORIO */
+    .aboutUsMain {
+        grid-area: mainEscritorio;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutUsMain div{
+        position: relative;
+        bottom: 130px;
+    }
+    .aboutUsMain div h1{
+        font-size: 80px;
+    }
+    .aboutUsMain div p{
+        position: relative;
+        top: 50px;
+        font-size: 20px;
+    }
+
+    /* PRIVACY POLICY PAGE ESCRITORIO */
+    .privacyMain{
+        grid-area: mainEscritorio;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .privacyMain div{
+        position: relative;
+        bottom: 130px;
+    }
+    .privacyMain div h1{
+        font-size: 80px;
+    }
+    .privacyMain div p{
+        position: relative;
+        top: 60px;
+        font-size: 20px;
+    }
+}
